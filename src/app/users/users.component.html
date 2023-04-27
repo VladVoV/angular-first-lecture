@@ -1,0 +1,39 @@
+<mat-toolbar>
+  <span>Angular lecture 1</span>
+</mat-toolbar>
+<mat-toolbar>
+  <div class="toolbar">
+    <div class="toolbar-actions">
+      <button mat-raised-button (click)="deleteSelectedUsers()">Delete Selected</button>
+      <button mat-raised-button (click)="selectAll()">Select all</button>
+      <mat-form-field appearance="fill">
+        <mat-label>Sort By</mat-label>
+        <mat-select [(ngModel)]="selectedSortOption" (selectionChange)="sortUsers()">
+          <mat-option value="id">ID</mat-option>
+          <mat-option value="name">Name</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="toolbar-search-input" appearance="fill">
+        <mat-label>Search users</mat-label>
+        <input matInput type="text" [(ngModel)]="searchText" (input)="autoComplete($event)">
+        <mat-autocomplete>
+          <mat-option *ngFor="let email of autoCompleteList" [value]="email"></mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+  </div>
+</mat-toolbar>
+<div class="card-container">
+  <mat-card class="card" *ngFor="let user of users">
+    <div class="card-checkbox-container">
+      <input type="checkbox" class="checkbox" [(ngModel)]="user.selected">
+    </div>
+    <mat-card-header class="card-header">
+      <div class="card-image">
+        <img mat-card-image [src]="user.imagePath" alt="{{user.imageAlt}}" class="small-image">
+      </div>
+    </mat-card-header>
+    {{user.id}} {{user.firstName}} {{user.lastName}}
+    <div class="card-body">{{user.email}}</div>
+  </mat-card>
+</div>
