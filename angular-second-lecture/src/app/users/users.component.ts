@@ -16,9 +16,7 @@ interface User {
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  cardCount: number = 0;
   searchTerm: string = '';
-  @ViewChild('cardContainer') cardContainer!: ElementRef;
   users: User[] = [];
   selectedSortOption: 'id' | 'name' = 'id';
   addUserForm: FormGroup;
