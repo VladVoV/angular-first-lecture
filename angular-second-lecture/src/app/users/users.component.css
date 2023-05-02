@@ -1,0 +1,47 @@
+.card-container{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5vw 0;
+}
+.card{
+  display: flex;
+  align-items: center;
+  height: 15vw;
+  width: 19.75vw;
+}
+.card-image{
+  height: 200px;
+  margin-bottom: 15%;
+}
+.small-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  margin: auto;
+}
+
+.toolbar-actions > *{
+  margin: 0 2%;
+}
+
+.toolbar-search-input{
+  padding: 0 0 0 90%;
+}
+
+mat-toolbar{
+  width: 100vw;
+}
+.card-checkbox-container{
+margin: 2% 0 0 80%;
+
+}
+.checkbox{
+  transform: scale(1.5);
+}
+.form-input{
+  margin: 0 1vw;
+}
+.form-title{
+  margin: 0 2vw;
+}
